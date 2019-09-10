@@ -2,6 +2,7 @@ package lexicon.se.anton.SpringContainer_StudentManagement;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -9,6 +10,7 @@ public class ScannerInputService implements UserInputService {
 
 	private Scanner scanner;
 	
+	@Autowired
 	public ScannerInputService(Scanner scanner) {
 		this.scanner = scanner;
 	}
