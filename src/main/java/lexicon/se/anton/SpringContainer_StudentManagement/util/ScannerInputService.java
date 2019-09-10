@@ -1,4 +1,4 @@
-package lexicon.se.anton.SpringContainer_StudentManagement;
+package lexicon.se.anton.SpringContainer_StudentManagement.util;
 
 import java.util.Scanner;
 

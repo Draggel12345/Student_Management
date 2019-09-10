@@ -1,5 +1,6 @@
 package lexicon.se.anton.SpringContainer_StudentManagement.data_access;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,13 +11,14 @@ import lexicon.se.anton.SpringContainer_StudentManagement.models.Student;
 @Component
 public class StudentDaoListImpl implements StudentDao {
 
-	private List<Student> students;
+	private List<Student> students = new ArrayList<>();
 
 	@Override
 	public Student save(Student student) {
-		if (!students.contains(student)) {
+		if(!students.contains(student)) {
 			students.add(student);
 		}
+		
 		return student;
 	}
 
@@ -37,14 +39,15 @@ public class StudentDaoListImpl implements StudentDao {
 	}
 
 	@Override
-	public void delete(int id) {
+	public Optional<Student> delete(int id) {
 		Optional<Student> optional = find(id);
 		if (optional.isPresent()) {
 			students.remove(optional.get());
 		} else {
 			throw new IllegalArgumentException("Student with id: " + id + " could not be found.");
 		}
-
+		
+		return optional;
 	}
 
 }

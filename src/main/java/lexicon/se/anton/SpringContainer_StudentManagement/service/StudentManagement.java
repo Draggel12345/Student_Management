@@ -1,14 +1,16 @@
-package lexicon.se.anton.SpringContainer_StudentManagement.data_access;
+package lexicon.se.anton.SpringContainer_StudentManagement.service;
 
 import java.util.List;
 import java.util.Optional;
 
 import lexicon.se.anton.SpringContainer_StudentManagement.models.Student;
 
-public interface StudentDao {
+public interface StudentManagement {
 
+	Student creat();
 	Student save(Student student);
 	Optional<Student> find(int id);
+	Optional<Student> remove(int id);
 	List<Student> findAll();
-	Optional<Student> delete(int id);
+	Student edit(Student student);
 }
