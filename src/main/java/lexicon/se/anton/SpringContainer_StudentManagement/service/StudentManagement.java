@@ -10,7 +10,7 @@ public interface StudentManagement {
 	Student creat();
 	Student save(Student student);
 	Optional<Student> find(int id);
-	Optional<Student> remove(int id);
+	Boolean remove(int id);
 	List<Student> findAll();
 	Student edit(Student student);
 }

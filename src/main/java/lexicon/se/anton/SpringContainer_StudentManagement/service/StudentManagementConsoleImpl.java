@@ -44,7 +44,7 @@ public class StudentManagementConsoleImpl implements StudentManagement {
 	}
 
 	@Override
-	public Optional<Student> remove(int id) {
+	public Boolean remove(int id) {
 		return studentDao.delete(id);
 	}
 

@@ -39,15 +39,13 @@ public class StudentDaoListImpl implements StudentDao {
 	}
 
 	@Override
-	public Optional<Student> delete(int id) {
+	public Boolean delete(int id) {
 		Optional<Student> optional = find(id);
 		if (optional.isPresent()) {
-			students.remove(optional.get());
+			return students.remove(optional.get());
 		} else {
 			throw new IllegalArgumentException("Student with id: " + id + " could not be found.");
 		}
-		
-		return optional;
 	}
 
 }

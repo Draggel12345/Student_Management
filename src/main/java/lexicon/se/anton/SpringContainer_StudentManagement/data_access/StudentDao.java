@@ -10,5 +10,5 @@ public interface StudentDao {
 	Student save(Student student);
 	Optional<Student> find(int id);
 	List<Student> findAll();
-	Optional<Student> delete(int id);
+	Boolean delete(int id);
 }
